@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    try {
+    // try {
 
     //     const response = await fetch("your-api-endpoint", {
     //         method: "GET",
