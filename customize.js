@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
     // try {
-
     //     const response = await fetch("your-api-endpoint", {
     //         method: "GET",
     //         headers: {
@@ -17,18 +16,19 @@ document.addEventListener("DOMContentLoaded", async function () {
     //           const hasRecurringProduct = purchases.some(purchase => 
     //         purchase.billingCycleType === "RECURRING"
     //     );
-
-        if (hasRecurringProduct) {
-            displayRecurringCheckbox();
-        }
-
     // } catch (error) {
     //     console.error("Error fetching purchase data:", error);
     // }
+    const hasRecurringProduct = true
+
+    if (hasRecurringProduct) {
+        displayRecurringCheckbox();
+    }
+
 });
 
 // Function to create and display the checkbox
 function displayRecurringCheckbox() {
     const radioContainer = document.getElementById("#i2bfyo"); // Change this to the correct container
-	console.log ('radio container >>>>',radioContainer)
+	console.log ('radio container >>>>', radioContainer)
 }
