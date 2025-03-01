@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Assuming cartData is fetched from API but cannot do the api call causing CORS error
-const cartItems = cartData.items || [];  // Replace cartData with the actual variable
+
+const cartItems = [];  // Replace cartData with the actual variable
 
 // Function to check for recurring products
 function checkForRecurringProduct(cartItems) {
