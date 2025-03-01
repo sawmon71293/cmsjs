@@ -1,19 +1,35 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Assuming cartData is fetched from API but cannot do the api call causing CORS error
-
-const cartItems = [];  // Replace cartData with the actual variable
-
-// Function to check for recurring products
-function checkForRecurringProduct(cartItems) {
-  return cartItems.some(item => item.fulfillmentCycleType === 'RECURRING');
-}
-
-console.log ('Hello World!')
-// Show or hide checkbox based on recurring products
-// id of the checkbox radio container 'i2bfyo'
-if (checkForRecurringProduct(cartItems)) {
-  document.getElementById('i2bfyo').style.display = 'block';
-} else {
-  document.getElementById('i2bfyo').style.display = 'none';
-}
-});
+document.addEventListener('DOMContentLoaded', async function () {
+    console.log('Hello World!');
+  
+    try {
+      const response = await fetch(
+        'https://api.checkoutchamp.com/order/query/?loginId=testapi&password=abc123&lastName=Robinson&startDate=8%2F7%2F14',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const cartItems = await response.json();
+      
+      // Function to check for recurring products
+      function checkForRecurringProduct(cartItems) {
+        return cartItems.some(item => item.fulfillmentCycleType === 'RECURRING');
+      }
+  
+      // Show or hide checkbox based on recurring products
+      const checkboxContainer = document.getElementById('i2bfyo');
+      if (checkboxContainer) {
+        checkboxContainer.style.display = checkForRecurringProduct(cartItems) ? 'block' : 'none';
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  });
+  
