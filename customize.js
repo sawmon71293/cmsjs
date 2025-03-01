@@ -7,6 +7,7 @@ function checkForRecurringProduct(cartItems) {
   return cartItems.some(item => item.fulfillmentCycleType === 'RECURRING');
 }
 
+console.log ('Hello World!')
 // Show or hide checkbox based on recurring products
 // id of the checkbox radio container 'i2bfyo'
 if (checkForRecurringProduct(cartItems)) {
