@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async function () {
     const cartItems = []
     try {
-        const response = await fetch("https://api.checkoutchamp.com/product/query/?loginId=testapi&password=abc123");
+        const response = await fetch("https://api.checkoutchamp.com/product/query/?loginId=&password=abc123");
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
