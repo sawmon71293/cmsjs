@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       }
   
       const cartItems = await response.json();
-      
+      console.log ('cart items>>>>>',cartItems)
       // Function to check for recurring products
       function checkForRecurringProduct(cartItems) {
         return cartItems.some(item => item.fulfillmentCycleType === 'RECURRING');
