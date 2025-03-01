@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async function () {
     const cartItems = []
     try {
-        const response = await fetch("https://api.checkoutchamp.com/order/surcharge/?loginId=123&password=12345&mode=CALC&cardNumber=4809035904248714&shipPostalCode=30078&postalCode=30092&product1_id=1");
+        const response = await fetch("http://localhost:3000/api/surcharge");
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
